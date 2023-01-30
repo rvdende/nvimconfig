@@ -52,10 +52,6 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- dependency for better sorting performance
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' } -- fuzzy finder
-  -- autocompletion
-  use 'hrsh7th/nvim-cmp' -- completion plugin
-  use 'hrsh7th/cmp-buffer' -- source for text in buffer
-  use 'hrsh7th/cmp-path' -- source for file system paths
   -- snippets
   use 'L3MON4D3/LuaSnip' -- snippet engine
   use 'saadparwaiz1/cmp_luasnip' -- for autocompletion
@@ -65,7 +61,22 @@ return packer.startup(function(use)
   use 'williamboman/mason-lspconfig.nvim' -- bridges gap b/w mason & lspconfig
   -- configuring lsp servers
   use 'neovim/nvim-lspconfig' -- easily configure language servers
-  use 'hrsh7th/cmp-nvim-lsp' -- for autocompletion
+
+  use 'simrat39/rust-tools.nvim'
+
+  -- Completion framework:
+  use 'hrsh7th/nvim-cmp'
+
+  -- LSP completion source:
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Useful completion sources:
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/vim-vsnip'
 
   use {
     'glepnir/lspsaga.nvim',
